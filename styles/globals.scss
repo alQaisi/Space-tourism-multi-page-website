@@ -1,0 +1,139 @@
+@use "./variables.module.scss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+html{
+  font-size: 16px;
+  @media screen and (max-width:1024px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width:780px) {
+    font-size: 10px;
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: 'Cinzel', serif;
+  box-sizing: border-box;
+}
+
+.heading{
+  color:variables.$heading-items-color;
+  &.one{
+    font-size:9.375rem;
+  }
+  &.two{
+    font-size:6.25rem;
+  }
+  &.three{
+    font-size:3.5rem;
+  }
+  &.four{
+    font-size:2rem;
+  }
+  &.five{
+    font-size: 1.75rem;
+    letter-spacing: 3.75px;
+    color: variables.$main-text-color;
+  }
+}
+
+.subHeading{
+  color:variables.$heading-items-color;
+  &.one{
+    font-size: 1.75rem;
+  }
+  &.textColor{
+    color:variables.$text-color;
+  }
+  &.two{
+    font-size: .875rem;
+    letter-spacing: 2.35px;
+    color:variables.$text-color;
+  }
+  &.light{
+    opacity: 0.5;
+  }
+  &.normal{
+    opacity: 1;
+  }
+}
+
+.navText{
+  color:variables.$heading-items-color;
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+}
+
+.text{
+  color:variables.$text-color;
+  font-size: 1rem; 
+  line-height: 2rem;
+}
+.sectionNumber{
+  letter-spacing: 4.725px;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  letter-spacing: 4.75px;
+}
+
+.container {
+  padding: 140px 0 50px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+  background-image: url("/assets/background-images/background-home-desktop.jpg");
+  &.destination{
+    background-image: url("/assets/background-images/background-destination-desktop.jpg");
+  }
+  &.crew{
+    background-image: url("/assets/background-images/background-crew-desktop.jpg");
+  }
+  &.technology{
+    background-image: url("/assets/background-images/background-technology-desktop.jpg");
+  }
+  @media screen and (max-width:1024px) {
+    padding-top:96px;
+    background-image: url("/assets/background-images/background-home-tablet.jpg");
+    &.destination{
+      background-image: url("/assets/background-images/background-destination-tablet.jpg");
+    }
+    &.crew{
+      background-image: url("/assets/background-images/background-crew-tablet.jpg");
+    }
+    &.technology{
+      background-image: url("/assets/background-images/background-technology-tablet.jpg");
+    }
+  }
+  @media screen and (max-width:500px) {
+    background-image: url("/assets/background-images/background-home-mobile.jpg");
+    &.destination{
+      background-image: url("/assets/background-images/background-destination-mobile.jpg");
+    }
+    &.crew{
+      background-image: url("/assets/background-images/background-crew-mobile.jpg");
+    }
+    &.technology{
+      background-image: url("/assets/background-images/background-technology-mobile.jpg");
+    }
+  }
+}

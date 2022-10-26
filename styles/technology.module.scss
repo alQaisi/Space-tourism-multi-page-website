@@ -1,0 +1,135 @@
+@use "./variables.module.scss";
+
+.container{
+    margin-top:75px;
+    & h4:first-of-type{
+        width:90%;
+        margin:0px 0 35px auto;
+    }
+    @media screen and (max-width:1250px) {
+        & .technologiesNum{
+            & span{
+                width:65px;
+                height:65px;
+            }
+            gap:32px;
+        }
+        & .infoContainer{
+            gap: 0 32px;
+        }
+        & .contentContainer{
+            gap: 0 50px;
+        }
+        & .imageContainer{
+            width:40%;
+        }
+    }
+    @media screen and (max-width:1024px){
+        margin-top:50px;
+        & h4:first-of-type{
+            width:100%;
+            padding-left: 15px;
+            margin:0px 0 0px auto;
+        }
+        & .contentContainer{
+            flex-direction: column-reverse;
+            gap: 50px 0px;
+            margin-left: 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        & .imageContainer{
+            width:100%;
+            max-width: unset;
+            & div{
+                padding-bottom: 45%;
+            }
+        }
+        & .technologiesNum{
+            margin-bottom: 40px;
+            flex-direction: row;
+            & span{
+                width: 60px;
+                height: 60px;
+            }
+        }
+        & .infoContainer{
+            flex-direction: column;
+            & .textContainer{
+                margin: 0 15px;
+            }
+        }
+    }
+}
+.textContainer{
+    max-width: 515px;
+    & h3{
+        margin-block: 16px;
+    }
+}
+.technologiesNum{
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+    & span{
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid variables.$heading-items-color;;
+        display: grid;
+        place-items: center;
+        color: variables.$heading-items-color;
+        transition: all .15s ease-in-out;
+        &:hover,&.active{
+            background-color: variables.$heading-items-color;
+            color: variables.$items-active-color;
+            cursor: pointer;
+        }
+    }
+}
+.infoContainer{
+    display: flex;
+    align-items: center;
+    gap: 0px 64px;
+}
+.contentContainer{
+    margin: 100px 0px 15px 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 10%;
+}
+.imageContainer{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 515px; 
+    background-image: url("/assets/technology/image-launch-vehicle-portrait.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    & div{
+        padding-bottom: 105%;
+    }
+    transition: all .5s ease-in-out;
+    &.launch{
+        background-image: url("/assets/technology/image-launch-vehicle-portrait.jpg");
+    }
+    &.spaceport{
+        background-image: url("/assets/technology/image-spaceport-portrait.jpg");
+    }
+    &.capsule{
+        background-image: url("/assets/technology/image-space-capsule-portrait.jpg");
+    }
+    @media screen and (max-width:1024px) {
+        &.launch{
+            background-image: url("/assets/technology/image-launch-vehicle-landscape.jpg");
+        }
+        &.spaceport{
+            background-image: url("/assets/technology/image-spaceport-landscape.jpg");
+        }
+        &.capsule{
+            background-image: url("/assets/technology/image-space-capsule-landscape.jpg");
+        }
+    }
+}
